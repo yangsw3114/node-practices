@@ -34,3 +34,29 @@
     3) npm 모듈: npm를 통해서 node_module에서 설치해서 사용하는 모듈
         - 로컬 배포
         - 원격 배포  
+
+6. npmjs.com npm registry에 패키지 배포
+    1. 사용자 등록
+    2. 배포
+        $npm adduser
+        Username: ...
+        Password: ...
+        [douzone-ysw-math] $ npm publish
+
+7. helloweb-ex01: 맨바닥에서 웹애플리케이션 만들어 보기
+    1. app01: based on http: core module
+    2. app02: based on http, fs: core module
+    3. app03: based on connect, serve-static: npm package
+        설치할것
+        $npm i connect
+        $npm i serve-static 
+    4. app04: based on connect, serve-static, connect-route: npm package
+        $npm i connect
+        $npm i serve-static 
+        $npm i connect-route
+
+
+8. helloweb-ex02: express 프레임워크 기반의 웹애플리케이션 만들기
+[helloweb-ex02] $npm i express
+[helloweb-ex02] $npm i ejs
+[helloweb-ex02] $npm i -D nodaemon
