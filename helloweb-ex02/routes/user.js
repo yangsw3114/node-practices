@@ -25,7 +25,7 @@ router.route("/join").post(function(req, res){ //post
     res.redirect("/");
 });
 
-module.exports = router;
+
 
 router.route("/api").get(function(req, res){
     const vo = {
@@ -35,7 +35,7 @@ router.route("/api").get(function(req, res){
         gender: 'male'
     };
 
-    res.writeHead(200, {
-        'Content-Type': "application/json"
-    })
+    res.send(vo);
 });
+
+module.exports = router;
