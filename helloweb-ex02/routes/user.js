@@ -17,7 +17,7 @@ router.route("/info/:no").get(function(req, res){
 });
 
 router.route("/join").get(function(req, res){
-    res.render('user/join');
+    res.render('user/join'); // /views/user/join.ejs 파일 렌더링
 });
 
 router.route("/join").post(function(req, res){ //post
@@ -38,4 +38,4 @@ router.route("/api").get(function(req, res){
     res.send(vo);
 });
 
-module.exports = router;
+module.exports = router; //이 객체 자체를 모듈로 리턴해준다.

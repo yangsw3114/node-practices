@@ -2,10 +2,7 @@ const http = require('http');
 const path = require('path');
 const express = require('express');
 
-const mainRouter = require('./routes/main');
-const helloRouter = require('./routes/hello');
-const userRouter = require('./routes/user');
-
+const guestbookRouter = require('./routes/guestbook');
 const port = 8080;
 
 // Application Setup
@@ -24,9 +21,8 @@ const application = express()
         res.locals.res = res;
         next();
     })
-    .use('/', mainRouter)
-    .use('/hello', helloRouter)
-    .use('/user', userRouter);
+    .use('/', guestbookRouter);
+
 
 // Server Setup
 http.createServer(application)

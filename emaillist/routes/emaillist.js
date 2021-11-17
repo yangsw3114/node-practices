@@ -1,5 +1,6 @@
 const express = require('express');
-const controller = require('../controllers/emaillist');
+const controller = require('../controllers/emaillist'); 
+//컨트롤러 모듈 가져옴
 
 const router = express.Router();
 router.route('').get(controller.index);

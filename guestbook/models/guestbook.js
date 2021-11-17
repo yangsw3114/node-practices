@@ -23,7 +23,8 @@ module.exports = {
 
         try {
             return await query(
-                'select no, first_name as firstName, last_name as lastName, email from emaillist order by no desc', 
+                'select no, name, reg_date, message from guestbook order by reg_date asc', 
+                
                 []
             );
         } catch(e) {
@@ -32,14 +33,29 @@ module.exports = {
             conn.end();
         }
     },
-    insert: async function(emaillist){
+    insert: async function(guestbook){
         const conn = dbconn();
         const query = util.promisify(conn.query).bind(conn);
 
         try {
             return await query(
-                'insert into emaillist(first_name, last_name, email) values (?, ?, ?)',
-                Object.values(emaillist)
+                'insert into guestbook values (null, ?, ?, ?, now())',
+                Object.values(guestbook)
+            );
+        } catch(e) {
+            console.error(e);
+        } finally {
+            conn.end();
+        }       
+    },
+    delete: async function(guestbook){
+        const conn = dbconn();
+        const query = util.promisify(conn.query).bind(conn);
+
+        try {
+            return await query(
+                'delete from guestbook where no=? and password=?',
+                Object.values(guestbook)
             );
         } catch(e) {
             console.error(e);
