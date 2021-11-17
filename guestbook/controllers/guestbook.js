@@ -23,6 +23,7 @@ module.exports = { //module.exports를 통해 모듈화 시킬수 있다.
     },
     delete: async function(req, res){
         const results = await model.delete(req.body);
+        res.redirect("/");
     }
 }
 
