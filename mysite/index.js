@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 
 // 1. Environment Variables
 dotenv.config({path: path.join(__dirname, 'config/app.env') });
-
+dotenv.config({path: path.join(__dirname, 'config/db.env')});
 // 2. Application Routers
 const { applicationRouter } = require('./routes');
 const { SIGTERM } = require('constants');
