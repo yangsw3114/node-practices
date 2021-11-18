@@ -23,7 +23,7 @@ module.exports = {
 
         try {
             return await query(
-                'select no, name, reg_date, message from guestbook order by reg_date asc', 
+                "select no, name, date_format(reg_date,'%Y-%m-%d %H:%i:%s') as time, message from guestbook order by reg_date asc", 
                 
                 []
             );
