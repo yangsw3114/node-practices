@@ -8,6 +8,7 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
 
 // Import Mapping Object
 const User = require('./User')(sequelize);
+const Guestbook = require('./Guestbook')(sequelize);
 
 // DB에 반영(DDL)
 User.sync({
@@ -15,5 +16,10 @@ User.sync({
     alter: process.env.TABLE_ALTER_ALWAYS === 'true'
 });
 
+Guestbook.sync({
+    force: process.env.TABLE_CREATE_ALWAYS === 'true',
+    alter: process.env.TABLE_ALTER_ALWAYS === 'true'
+});
+
 // Export Mapping Object
-module.exports = {User};
+module.exports = {User, Guestbook};
