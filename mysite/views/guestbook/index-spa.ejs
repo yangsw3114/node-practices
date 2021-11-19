@@ -105,7 +105,7 @@
 						var password = $("#password-delete").val();
 
 						$.ajax({
-							url: '/guestbook/api/delete/' + no,
+							url: '/api/guestbook/' + no,
 							async: true,
 							type: 'delete',
 							dataType: 'json',
@@ -174,7 +174,7 @@
 				}
 
 				$.ajax({
-					url: '/guestbook/api/add',
+					url: '/api/guestbook',
 					async: true,
 					type: 'post',
 					dataType: 'json',
