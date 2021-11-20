@@ -1,7 +1,7 @@
 const { Sequelize, DataTypes } = require('sequelize');
 
 module.exports = function(sequelize) {
-    return sequelize.define('Guestbook', {
+    return sequelize.define('Guestbook', { //define는 sequelize에서 제공하는 메서드
         no: { 
             field: 'no',
             type: DataTypes.BIGINT(11),
